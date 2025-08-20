@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swarm-Intel: Decentralized Satellite Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F0F4F8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flow-arrow {
+            position: relative;
+            width: 100%;
+            height: 4px;
+            background: repeating-linear-gradient(
+                -45deg,
+                #4DA3FF,
+                #4DA3FF 10px,
+                #007BFF 10px,
+                #007BFF 20px
+            );
+            animation: flow-animation 2s linear infinite;
+        }
+        .flow-arrow-thin {
+            height: 2px;
+            background: repeating-linear-gradient(
+                -45deg,
+                #99C7FF,
+                #99C7FF 5px,
+                #4DA3FF 5px,
+                #4DA3FF 10px
+            );
+        }
+        @keyframes flow-animation {
+            0% { background-position: 0 0; }
+            100% { background-position: 28px 0; }
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-black text-[#004AAD]">Swarm-Intel</h1>
+            <p class="text-lg md:text-xl text-[#0062D5] mt-2">A Paradigm Shift to Decentralized Intelligence for Next-Generation Satellite Constellations</p>
+            <div class="mt-6 border-t border-slate-200 pt-4 max-w-md mx-auto">
+                <p class="text-base font-bold text-slate-600">Presented by Team Nexus Orbit</p>
+                <p class="text-base text-slate-500">Kotra Haridutt & Raj Vardhan Reddy</p>
+            </div>
+        </header>
+
+        <main class="space-y-12">
+
+            <section id="problem" class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-[#004AAD] mb-4 text-center">The Challenge: The Centralized Data Bottleneck</h2>
+                <p class="text-center max-w-3xl mx-auto mb-8 text-slate-600">
+                    Today's satellite constellations rely on an unsustainable data model. By downlinking massive volumes of raw data for ground-based processing, we introduce critical bottlenecks that limit real-time capabilities and escalate operational costs.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                    <div class="bg-slate-50 rounded-lg p-4 border border-slate-200">
+                        <div class="text-4xl mb-2">⏱</div>
+                        <h3 class="font-bold text-lg text-[#0062D5]">Extreme Latency</h3>
+                        <p class="text-sm text-slate-500">Significant delays between data acquisition and actionable insight generation.</p>
+                    </div>
+                    <div class="bg-slate-50 rounded-lg p-4 border border-slate-200">
+                        <div class="text-4xl mb-2">📡</div>
+                        <h3 class="font-bold text-lg text-[#0062D5]">Bandwidth Saturation</h3>
+                        <p class="text-sm text-slate-500">Downlinking terabytes of data consumes valuable and limited communication bandwidth.</p>
+                    </div>
+                    <div class="bg-slate-50 rounded-lg p-4 border border-slate-200">
+                        <div class="text-4xl mb-2">💰</div>
+                        <h3 class="font-bold text-lg text-[#0062D5]">Unsustainable Costs</h3>
+                        <p class="text-sm text-slate-500">High expenses for ground infrastructure, data storage, and processing power.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="solution" class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-[#004AAD] mb-4 text-center">The Solution: A Federated Intelligence Architecture</h2>
+                <p class="text-center max-w-3xl mx-auto mb-8 text-slate-600">
+                    Swarm-Intel flips the model by pushing lightweight AI models to the data source. Using Federated Learning, the constellation learns collaboratively without transmitting raw data, moving from a data-centric to an intelligence-centric approach.
+                </p>
+                <div class="flex flex-col items-center justify-center space-y-4">
+                    <div class="text-lg font-bold text-white bg-[#0062D5] rounded-full px-6 py-3 shadow-md">Chief Satellite (Federated Aggregator)</div>
+                    <div class="w-px h-8 bg-slate-300"></div>
+                    <div class="text-sm text-slate-500">▼ Global Model Broadcast ▼</div>
+                    <div class="w-full flex justify-around">
+                         <div class="text-center p-4 bg-slate-50 border border-[#99C7FF] rounded-lg shadow-sm">🛰<br/>Client: Optical</div>
+                         <div class="text-center p-4 bg-slate-50 border border-[#99C7FF] rounded-lg shadow-sm">🛰<br/>Client: SAR</div>
+                         <div class="text-center p-4 bg-slate-50 border border-[#99C7FF] rounded-lg shadow-sm">🛰<br/>Client: Infrared</div>
+                    </div>
+                    <div class="text-sm text-slate-500">▲ Model Updates (Knowledge) ▲</div>
+                    <div class="w-px h-8 bg-slate-300"></div>
+                    <div class="text-lg font-bold text-white bg-[#007BFF] rounded-full px-6 py-3 shadow-md">Refined Global Model</div>
+                    <div class="w-px h-8 bg-slate-300"></div>
+                    <div class="text-sm text-slate-500">▼ Actionable Insights ONLY ▼</div>
+                    <div class="text-2xl">🌍</div>
+                    <div class="font-bold text-[#004AAD]">Ground Station</div>
+                </div>
+            </section>
+            
+            <section id="benefits" class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                 <h2 class="text-3xl font-bold text-[#004AAD] mb-4 text-center">Transformative Benefits</h2>
+                 <p class="text-center max-w-3xl mx-auto mb-8 text-slate-600">
+                    This new architecture yields dramatic improvements in efficiency, speed, and security, unlocking the true potential of satellite constellations.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-xl font-bold text-[#0062D5] mb-2 text-center">Bandwidth Usage: A Drastic Reduction</h3>
+                        <p class="text-center text-sm text-slate-500 mb-4">By transmitting only lightweight model updates instead of raw imagery, Swarm-Intel reduces data downlink requirements by several orders of magnitude.</p>
+                        <div class="chart-container">
+                            <canvas id="bandwidthChart"></canvas>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-[#0062D5] mb-2 text-center">Collaborative Learning & Performance</h3>
+                        <p class="text-center text-sm text-slate-500 mb-4">The global model's accuracy improves with each communication round as it learns from the diverse data across the entire constellation, converging towards high performance.</p>
+                        <div class="chart-container">
+                            <canvas id="accuracyChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="roadmap" class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-[#004AAD] mb-4 text-center">Implementation Roadmap</h2>
+                <p class="text-center max-w-3xl mx-auto mb-8 text-slate-600">
+                    Our development is structured in three distinct phases, moving from robust simulation to real-world feasibility and integration.
+                </p>
+                <div class="relative pl-8 border-l-2 border-[#007BFF]">
+                    <div class="mb-8">
+                        <div class="absolute w-6 h-6 bg-[#004AAD] rounded-full -left-3 border-4 border-white"></div>
+                        <h3 class="text-xl font-bold text-[#0062D5]">Phase 1: Simulation & Validation</h3>
+                        <p class="text-slate-600">Develop a proof-of-concept using Python and TensorFlow Federated. We will establish a centralized baseline and analyze key metrics like model accuracy, convergence, and bandwidth savings on public datasets.</p>
+                    </div>
+                    <div class="mb-8">
+                        <div class="absolute w-6 h-6 bg-[#004AAD] rounded-full -left-3 border-4 border-white"></div>
+                        <h3 class="text-xl font-bold text-[#0062D5]">Phase 2: Optimization & Scaling</h3>
+                        <p class="text-slate-600">Integrate advanced FL algorithms (e.g., FedProx), scale the simulation to thousands of clients, and test system robustness against real-world conditions like intermittent network links and non-IID data distributions.</p>
+                    </div>
+                    <div>
+                        <div class="absolute w-6 h-6 bg-[#004AAD] rounded-full -left-3 border-4 border-white"></div>
+                        <h3 class="text-xl font-bold text-[#0062D5]">Phase 3: Real-World Feasibility</h3>
+                        <p class="text-slate-600">Conduct a comprehensive study to integrate the Swarm-Intel framework with specific inter-satellite communication protocols and onboard processing hardware (FPGAs, low-power GPUs), paving the way for on-orbit deployment.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="vision" class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-[#004AAD] mb-4 text-center">Future Vision: The Autonomous Space Ecosystem</h2>
+                <p class="text-center max-w-3xl mx-auto mb-8 text-slate-600">
+                    Swarm-Intel is the foundation for a new generation of intelligent, autonomous, and self-organizing space systems.
+                </p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    <div class="bg-slate-50 rounded-lg p-4">
+                        <div class="text-4xl mb-2">🧠</div>
+                        <h3 class="font-bold text-md text-[#0062D5]">Onboard Decision-Making</h3>
+                    </div>
+                    <div class="bg-slate-50 rounded-lg p-4">
+                        <div class="text-4xl mb-2">🔄</div>
+                        <h3 class="font-bold text-md text-[#0062D5]">Autonomous Tasking</h3>
+                    </div>
+                    <div class="bg-slate-50 rounded-lg p-4">
+                        <div class="text-4xl mb-2">✨</div>
+                        <h3 class="font-bold text-md text-[#0062D5]">Multi-Modal Data Fusion</h3>
+                    </div>
+                    <div class="bg-slate-50 rounded-lg p-4">
+                        <div class="text-4xl mb-2">🔗</div>
+                        <h3 class="font-bold text-md text-[#0062D5]">Dynamic & Resilient Networks</h3>
+                    </div>
+                </div>
+            </section>
+
+        
+            <!-- Added by request: Feasibility, Startup Model, Economic Contribution -->
+            <section id="feasibility" class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-[#004AAD] mb-4 text-center">Feasibility of Deployment</h2>
+                <p class="text-center max-w-3xl mx-auto mb-8 text-slate-600">Swarm-Intel is deployable with today’s technology. Space-grade AI processors already exist, federated learning protocols are proven in mobile and IoT systems, and lightweight ML models fit within satellite power and compute limits.</p>
+                <ul class="list-disc list-inside text-slate-600 max-w-3xl mx-auto space-y-2">
+                    <li>Onboard AI chips enable real-time inference and local training.</li>
+                    <li>Federated learning naturally maps to distributed constellations with intermittent links.</li>
+                    <li>Secure aggregation and encryption protect model updates and system integrity.</li>
+                </ul>
+            </section>
+
+            <section id="startup" class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-[#004AAD] mb-4 text-center">Startup &amp; Business Model</h2>
+                <p class="text-center max-w-3xl mx-auto mb-8 text-slate-600">Commercialization paths that fit existing operator workflows and budgets:</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                    <div class="bg-slate-50 rounded-lg p-4 border border-slate-200">
+                        <div class="text-3xl mb-2">💻</div>
+                        <h3 class="font-bold text-lg text-[#0062D5]">Software-as-a-Service</h3>
+                        <p class="text-sm text-slate-500">License/subscribe to onboard FL runtime + aggregator services.</p>
+                    </div>
+                    <div class="bg-slate-50 rounded-lg p-4 border border-slate-200">
+                        <div class="text-3xl mb-2">📊</div>
+                        <h3 class="font-bold text-lg text-[#0062D5]">Insights-as-a-Service</h3>
+                        <p class="text-sm text-slate-500">Deliver processed intelligence instead of raw data.</p>
+                    </div>
+                    <div class="bg-slate-50 rounded-lg p-4 border border-slate-200">
+                        <div class="text-3xl mb-2">🛡️</div>
+                        <h3 class="font-bold text-lg text-[#0062D5]">Dual Market</h3>
+                        <p class="text-sm text-slate-500">Commercial verticals (agri, insurance, logistics) + defense.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="economy" class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-[#004AAD] mb-4 text-center">Economic Contribution</h2>
+                <p class="text-center max-w-3xl mx-auto mb-8 text-slate-600">Swarm-Intel reduces costs, accelerates decisions, and strengthens the broader space economy.</p>
+                <ul class="list-disc list-inside text-slate-600 max-w-3xl mx-auto space-y-2">
+                    <li>Lower downlink, storage, and ground processing costs.</li>
+                    <li>Faster disaster response, precision agriculture, and supply-chain monitoring.</li>
+                    <li>High-skill job creation across AI, aerospace, and security.</li>
+                    <li>Improved national capability and reduced dependency on foreign infrastructure.</li>
+                </ul>
+            </section>
+</main>
+
+        <footer class="text-center mt-12 py-6 border-t border-slate-200">
+            <p class="text-slate-500">&copy; 2025 Swarm-Intel Project. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const wrapLabel = (label, maxLength = 16) => {
+            if (label.length <= maxLength) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).trim().length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            }
+            if (currentLine) {
+                lines.push(currentLine.trim());
+            }
+            return lines;
+        };
+        
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+              return label.join(' ');
+            }
+            return label;
+        };
+
+        const brilliantBlues = {
+            darkest: '#004AAD',
+            dark: '#0062D5',
+            medium: '#007BFF',
+            light: '#4DA3FF',
+            lightest: '#99C7FF',
+            background: 'rgba(77, 163, 255, 0.2)'
+        };
+
+        const commonChartOptions = {
+            maintainAspectRatio: false,
+            responsive: true,
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#334155',
+                        font: {
+                            family: "'Inter', sans-serif",
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    },
+                    backgroundColor: '#004AAD',
+                    titleFont: {
+                        family: "'Inter', sans-serif",
+                        size: 14,
+                        weight: 'bold'
+                    },
+                    bodyFont: {
+                        family: "'Inter', sans-serif",
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        color: '#e2e8f0'
+                    },
+                    ticks: {
+                        color: '#475569'
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                        color: '#475569'
+                    }
+                }
+            }
+        };
+
+        const bandwidthCtx = document.getElementById('bandwidthChart').getContext('2d');
+        new Chart(bandwidthCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Traditional Centralized Model', 'Swarm-Intel Federated Model'],
+                datasets: [{
+                    label: 'Data Transmitted (Terabytes per Day, Log Scale)',
+                    data: [150, 0.05],
+                    backgroundColor: [
+                        brilliantBlues.light,
+                        brilliantBlues.darkest,
+                    ],
+                    borderColor: [
+                        brilliantBlues.medium,
+                        brilliantBlues.dark,
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                ...commonChartOptions,
+                scales: {
+                    y: {
+                        type: 'logarithmic',
+                        min: 0.01,
+                        grid: {
+                            color: '#e2e8f0'
+                        },
+                        ticks: {
+                            color: '#475569',
+                            callback: function(value, index, values) {
+                                return Number(value.toString()) + ' TB';
+                            }
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            color: '#475569'
+                        }
+                    }
+                }
+            }
+        });
+
+        const accuracyCtx = document.getElementById('accuracyChart').getContext('2d');
+        new Chart(accuracyCtx, {
+            type: 'line',
+            data: {
+                labels: ['R0', 'R10', 'R20', 'R30', 'R40', 'R50', 'R60', 'R70', 'R80'],
+                datasets: [{
+                    label: 'Global Model Accuracy',
+                    data: [0.10, 0.65, 0.78, 0.85, 0.89, 0.91, 0.92, 0.925, 0.93],
+                    fill: true,
+                    borderColor: brilliantBlues.darkest,
+                    backgroundColor: brilliantBlues.background,
+                    tension: 0.4,
+                    pointBackgroundColor: brilliantBlues.medium,
+                    pointBorderColor: brilliantBlues.darkest,
+                    pointHoverRadius: 7
+                }]
+            },
+            options: {
+                ...commonChartOptions,
+                scales: {
+                     y: {
+                        beginAtZero: true,
+                        max: 1,
+                        grid: {
+                            color: '#e2e8f0'
+                        },
+                        ticks: {
+                            color: '#475569',
+                            callback: function(value) {
+                                return (value * 100) + '%';
+                            }
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Communication Rounds',
+                            color: '#475569'
+                        },
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            color: '#475569'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
